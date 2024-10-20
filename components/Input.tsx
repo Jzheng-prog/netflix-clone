@@ -18,8 +18,10 @@ const Input: React.FC<InputProps> = ({id,onChange,value,type,label}) => {
         className='
         block
         rounded-md
-        px-6pt-6
-        pb-1w-full
+        px-6
+        pt-6
+        pb-1
+        w-full
         text-md
         text-white
         bg-neutral-700
@@ -28,6 +30,7 @@ const Input: React.FC<InputProps> = ({id,onChange,value,type,label}) => {
         focus:ring-0
         peer'
         placeholder=' '/>
+
         <label htmlFor={id} 
         className='
         absolute
