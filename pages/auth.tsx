@@ -5,6 +5,7 @@ import React, { useCallback, useState } from 'react'
 import {FcGoogle} from 'react-icons/fc'
 import {FaGithub} from 'react-icons/fa'
 
+
 const Auth = () => {
 
   const [email, setEmail] = useState('')
@@ -43,8 +44,6 @@ const Auth = () => {
     }
   },[email, name,password,login])
 
-  
-
   return (
     <div className='relative h-full w-full bg-[url("/images/hero.jpg")] bg-no-repeat bg-fixed bg-cover'>
       <div className='bg-black w-full h-full lg:bg-opacity-50'> 
@@ -65,6 +64,7 @@ const Auth = () => {
                     id='username'
                     type='username'
                     onChange={(e:any)=>setName(e.target.value)}
+
                   />
                 )
               }
