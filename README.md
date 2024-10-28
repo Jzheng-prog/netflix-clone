@@ -1,41 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Full Stack Netflix Clone
+A fully functional Netflix-inspired streaming platform built using modern web technologies. This project includes user authentication, video playback, and a beautiful, responsive UI.
 
-## Getting Started
+## Tech Stack
+- **Frontend**: React, Tailwind CSS, Next.js
+- **Backend**: Next.js API Routes, Prisma
+- **Database**:: MongoDB
+- **Authentication**: NextAuth + OAuth with Google and Github
 
-First, run the development server:
+## Features
+- User Authentication with NextAuth
+- Responsive UI built with Tailwind CSS
+- User Profiles with personalized content
+- Favorites and Watchlist functionality
+- Highly Performant Next.js framework for SSR and fast loading
+- Data Modeling with Prisma and MongoDB
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Prerequisites
+Node.js (v14 or above)
+MongoDB database instance
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Preview
+<img src = https://github.com/user-attachments/assets/1a1e8dc4-25af-4351-bc61-923bdad16c77 >
+<img src = https://github.com/user-attachments/assets/8aeaa32a-daf4-4f78-9d99-1301a40d5ad5 >
+<img src = https://github.com/user-attachments/assets/46827cea-574b-49a7-800c-1cb5b7691fcd>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# netflix-clone
+## Installation
+1. git clone https://github.com/your-username/netflix-clone.git
+cd netflix-clone
+2. npm install
+3. Inside the .env file populate these var
+  - DATABASE_URL="your_mongodb_connection_string"
+  - NEXTAUTH_SECRET="your_nextauth_secret"
+  - NEXTAUTH_URL="http://localhost:3000"
+  - GOOGLE_CLIENT_ID="your_google_client_id"
+  - GOOGLE_CLIENT_SECRET="your_google_client_secret"
+  - GITHUB_CLIENT_ID="your_github_client_id"
+  - GITHUB_CLIENT_SECRET="your_github_client_secret"
+4. npm run dev
