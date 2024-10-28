@@ -8,9 +8,18 @@ import { getSession } from 'next-auth/react'
 const serverAuth = async (req: NextApiRequest) => {
 
     const session = await getSession({req});
+    
+    // console.log('inside serverAuth req:', req.body)
 
-    if(!session?.user?.email){
-        throw new Error('Not signed in')
+    console.log('inside serverAuth session:', session)
+    if (!session) {
+        throw new Error('No session');
+    }
+    if (!session.user) {
+        throw new Error('No session user');
+    }
+    if (!session.user.email) {
+        throw new Error('No session user.email');
     }
 
     const currentUser = await prismadb.user.findUnique({

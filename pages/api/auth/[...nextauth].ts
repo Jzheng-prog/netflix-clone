@@ -48,7 +48,7 @@ export default NextAuth({
                 if(!inCorrectPassword){
                     throw new Error('Password is Incorrect!')
                 }
-                return user;
+                return { id: user.id, email: user.email, name: user.name };
             }
 
 

@@ -1,0 +1,17 @@
+[
+    {
+      "title": "Sintel",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "thumbnailUrl": "https://download.blender.org/ED/coiver.jpg",
+      "description": "Sintel is a fantasy short film following the journey of a young girl who embarks on a quest to find her lost dragon companion. Set in a mystical world, she faces dangers and discovers more than she expected.",
+      "genre": "Fantasy, Animation"
+    },
+    {
+      "title": "Tears of Steel",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+      "thumbnailUrl": "https://mango.blender.org/wp-content/uploads/2013/05/01_thom_celia_bridge.jpg",
+      "description": "Tears of Steel is a sci-fi short film about a group of scientists and warriors who gather in a futuristic world to attempt to fix a broken relationship using advanced technology, ultimately to save humanity from destruction.",
+      "genre": "Science Fiction, Action"
+    }
+  ]
+  

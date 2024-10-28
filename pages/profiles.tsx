@@ -51,7 +51,7 @@ const Profiles = () => {
                     </div>
 
                     <div className=' mt-4 text-gray-400 text-2xl text-center group-hover:text-white'>
-                        john
+                        {user?.name}
                     </div>
                 </div>
             </div>
