@@ -10,7 +10,7 @@ export default async function handler(req:NextApiRequest, res: NextApiResponse){
     // const {currentUser} = await serverAuth(req)
     const {movieId} = req.body;
 
-    console.log('req.body movieid:', movieId)
+    // console.log('req.body movieid:', movieId)
     
     try{
         if(req.method === 'POST'){
@@ -19,9 +19,9 @@ export default async function handler(req:NextApiRequest, res: NextApiResponse){
             // console.log('req.method:', req.method)
 
 
-            const {currentUser} = await serverAuth(req)
+            const currentUser = await serverAuth(req,res)
 
-            // console.log('currrUser:', currentUser)
+            // console.log('currrUser2222:', currentUser)
             const {movieId} = req.body;
 
             // console.log("movie id is sss:", movieId)
@@ -31,6 +31,8 @@ export default async function handler(req:NextApiRequest, res: NextApiResponse){
                     id: movieId
                 }
             })
+
+            // console.log('existingMovie:, ', existingMovie)
 
             if(!existingMovie){
                 throw new Error('Invalid movie Id.')
@@ -47,11 +49,13 @@ export default async function handler(req:NextApiRequest, res: NextApiResponse){
                 }
             })
 
+            // console.log('updated user!!!!', user)
+
             return res.status(200).json(user)
         }
 
         if(req.method === 'DELETE'){
-            const {currentUser} = await serverAuth(req)
+            const currentUser = await serverAuth(req,res)
 
             const {movieId} = req.body;
 

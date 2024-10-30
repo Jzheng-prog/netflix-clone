@@ -11,7 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     try{
         // console.log('inside /api/current ')
-        const {currentUser} = await serverAuth(req)
+        const currentUser = await serverAuth(req, res)
         // console.log('inside /api/current currentUser: ',currentUser)
 
         return res.status(200).json(currentUser)

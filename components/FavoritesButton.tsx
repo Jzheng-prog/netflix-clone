@@ -22,10 +22,11 @@ const FavoritesButton: React.FC<FavoritesButtonProps> = ({movieId}) => {
 
     const toggleFavorites = useCallback( async ()=>{
         let response;
+
         if(isFavorite){
           response = await axios.delete('/api/favorite',{data:{movieId}})
         }else{
-          response = await axios.post('/api/favorite',{data:{movieId}})
+          response = await axios.post('/api/favorite',{movieId})
         }
         const updatedFavID = response?.data?.favoriteIds;
 
@@ -38,12 +39,12 @@ const FavoritesButton: React.FC<FavoritesButtonProps> = ({movieId}) => {
 
     const Icon = isFavorite? AiOutlineCheck : AiOutlinePlus
 
-    useEffect(()=>{
-      console.log('movieid', movieId)
-      console.log('currentUser', currentUser)
-      console.log('isFavorite', isFavorite)
+    // useEffect(()=>{
+    //   console.log('movieid', movieId)
+    //   console.log('currentUser', currentUser)
+    //   console.log('isFavorite', isFavorite)
 
-    },[movieId, currentUser, isFavorite])
+    // },[movieId, currentUser, isFavorite])
 
 
   return (

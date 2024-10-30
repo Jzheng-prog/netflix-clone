@@ -2,16 +2,17 @@
 
 
 import prismadb from '@/lib/prismadb'
-import { NextApiRequest } from 'next'
-import { getSession } from 'next-auth/react'
+import { authOptions } from '@/pages/api/auth/[...nextauth]';
+import { NextApiRequest, NextApiResponse } from 'next'
+import { getServerSession } from 'next-auth';
 
-const serverAuth = async (req: NextApiRequest) => {
+const serverAuth = async (req: NextApiRequest, res: NextApiResponse) => {
 
-    const session = await getSession({req});
+    const session = await getServerSession(req, res, authOptions);
     
     // console.log('inside serverAuth req:', req.body)
 
-    console.log('inside serverAuth session:', session)
+    // console.log('inside serverAuth session:', session)
     if (!session) {
         throw new Error('No session');
     }
@@ -32,7 +33,7 @@ const serverAuth = async (req: NextApiRequest) => {
         throw new Error('Not signed in')
     }
 
-    return {currentUser}
+    return currentUser
 }
 
 export default serverAuth
