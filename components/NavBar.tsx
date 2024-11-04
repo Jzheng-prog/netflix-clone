@@ -33,13 +33,13 @@ const NavBar = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll)
         }
-    })
+    },[])
   return (
     <nav className='w-full fixed z-40'>
         <div className={`
         px-4 
         md:px-16
-        py-5
+        py-6
         flex 
         flex-row
         items-center
@@ -48,7 +48,9 @@ const NavBar = () => {
         ${showBG ? 'bg-zinc-900 bg-opacity-90' : ''
         }
         `}>
-            <Image src="/images/Netflix-logo.png" alt="logo" className='h-[150px]' width={150} height={150}/>
+            <div className='h-10 w-10 md:w-16 md:h-16 lg:w-24 lg:h-24'>
+                <Image src="/images/Netflix-logo.png" alt="logo" objectFit='contain' width={150} height={150}/>
+            </div>
             <div className='flex-row ml-8 gap-7 hidden lg:flex'>
                 <NavbarItem label='Home' />
                 <NavbarItem label='Series' />

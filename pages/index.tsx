@@ -31,7 +31,7 @@ export default function Home() {
   const {isOpen, closeModal} = useInfoModal()
 
   return (
-    <div>
+    <>
       <InfoModal visible={isOpen} onClose={closeModal}/>
       <NavBar/>
       <Billboard/>
@@ -40,7 +40,7 @@ export default function Home() {
         <MovieList title="My List" data={favList}/>
 
       </div>
-    </div>
+    </>
       
   );
 }
