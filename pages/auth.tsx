@@ -12,10 +12,6 @@ const Auth = () => {
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
 
-  useEffect(()=>{
-    console.log(email, name, password)
-  },[email, name, password])
-
   const [variant, setVariant] = useState('login')
 
   const toggleVariant = useCallback(()=>{
@@ -32,6 +28,7 @@ const Auth = () => {
 
     }catch(error){
       console.log(error)
+      alert("Login failed. Please check your credentials."); // Notify user
     }
   },[email,password])
 
@@ -45,6 +42,7 @@ const Auth = () => {
       login()
     }catch(error){
       console.log(error)
+      alert("Registration failed. Please check your credentials."); // Notify user
     }
   },[email, name,password,login])
 
