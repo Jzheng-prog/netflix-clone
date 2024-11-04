@@ -12,13 +12,15 @@ const MovieCard:React.FC<MovieCardProps> = ({data}) => {
 
   const router = useRouter()
   const {openModal} = useInfoModal()
+
+  const thumbnailUrl = data?.thumbnailUrl || '/default-thumbnail.svg';
   // useEffect(()=>{
   //   console.log('data from moviecard', data)
   // },[])
   return (
     <div className='group bg-zinc-900 col-span relative h-[12vw]'>
       <Image 
-      src={data?.thumbnailUrl} 
+      src={thumbnailUrl} 
       alt="thumbnail" 
       className='
       cursor-pointer
@@ -53,7 +55,7 @@ const MovieCard:React.FC<MovieCardProps> = ({data}) => {
       group-hover:opacity-100
       '>
         <Image
-        src={data?.thumbnailUrl} 
+        src={thumbnailUrl} 
         alt="thumbnail"
         className='
         cursor-pointer
