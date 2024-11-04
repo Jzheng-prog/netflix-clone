@@ -20,6 +20,7 @@ const Auth = () => {
 
   const login = useCallback(async()=>{
     try{
+      console.log(email, password)
       await signIn('credentials',{
         email,
         password,
@@ -34,6 +35,7 @@ const Auth = () => {
 
   const register = useCallback(async()=>{
     try{
+      console.log(email, password)
       await axios.post('/api/register',{
         email,
         name,
