@@ -7,9 +7,9 @@ import { compare } from 'bcrypt';
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import type { AuthOptions } from "next-auth"; // Import AuthOptions type
+import type { AuthOptions } from "next-auth";
 
-export const authOptions: AuthOptions = { // Explicitly define the type here
+export const authOptions: AuthOptions = { 
     providers: [
         GithubProvider({
             clientId: process.env.GITHUB_ID || '',
@@ -52,7 +52,7 @@ export const authOptions: AuthOptions = { // Explicitly define the type here
     pages: { signIn: '/auth' },
     debug: process.env.NODE_ENV === 'development',
     adapter: PrismaAdapter(prismadb),
-    session: { strategy: 'jwt' }, // Ensure this is either 'jwt' or 'database'
+    session: { strategy: 'jwt' },
     jwt: { secret: process.env.NEXTAUTH_JWT_SECRET },
     secret: process.env.NEXTAUTH_SECRET,
 };

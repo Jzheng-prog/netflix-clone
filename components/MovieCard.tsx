@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { BsFillPlayFill } from 'react-icons/bs'
 import FavoritesButton from './FavoritesButton'
-import { Router, useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import useInfoModal from '@/hooks/useInfoModal'
-interface MovieCradProps{
-    data: Record<string, any>
+import Image from 'next/image'
+import { Movie } from '@prisma/client'
+interface MovieCardProps{
+    data: Movie
 }
-const MovieCard:React.FC<MovieCradProps> = ({data}) => {
+const MovieCard:React.FC<MovieCardProps> = ({data}) => {
 
   const router = useRouter()
   const {openModal} = useInfoModal()
@@ -15,7 +17,7 @@ const MovieCard:React.FC<MovieCradProps> = ({data}) => {
   // },[])
   return (
     <div className='group bg-zinc-900 col-span relative h-[12vw]'>
-      <img 
+      <Image 
       src={data?.thumbnailUrl} 
       alt="thumbnail" 
       className='
@@ -30,6 +32,8 @@ const MovieCard:React.FC<MovieCradProps> = ({data}) => {
       delay-300
       w-full
       h-[12vw]'
+      width={200}
+      height={200}
       />
       <div className='
       opacity-0
@@ -48,7 +52,7 @@ const MovieCard:React.FC<MovieCradProps> = ({data}) => {
       group-hover:translate-x-[2vw]
       group-hover:opacity-100
       '>
-        <img 
+        <Image
         src={data?.thumbnailUrl} 
         alt="thumbnail"
         className='
@@ -60,6 +64,8 @@ const MovieCard:React.FC<MovieCradProps> = ({data}) => {
         rounded-t-md
         w-full
         h-[12vw]'
+        width={200}
+        height={200}
          />
          <div className='z-10 bg-zinc-800 p-2 lg:p-4 absolute w-full transition shadow-md rounded-b-md'>
             <div className='flex flex-row items-center gap-3'>

@@ -1,8 +1,6 @@
 import byrcrt from 'bcrypt'
 import { NextApiRequest, NextApiResponse } from 'next';
 import prismadb from '@/lib/prismadb'
-import { error } from 'console';
-
 
 export default async function handler(req:NextApiRequest, res: NextApiResponse){
  
@@ -35,7 +33,7 @@ export default async function handler(req:NextApiRequest, res: NextApiResponse){
         })
         return res.status(200).json(user);
     }catch(e){
-        console.log(error)
+        console.log(e)
         return res.status(400).end()
     }
 }

@@ -1,7 +1,7 @@
 import useCurrentUser from '@/hooks/useCurrentUser'
 import useFavorites from '@/hooks/useFavorites'
 import axios from 'axios'
-import React, { useCallback, useEffect, useMemo } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { AiOutlineCheck, AiOutlinePlus } from 'react-icons/ai'
 
 

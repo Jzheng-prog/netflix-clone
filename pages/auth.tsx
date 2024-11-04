@@ -4,6 +4,7 @@ import { signIn } from 'next-auth/react'
 import React, { useCallback, useState } from 'react'
 import {FcGoogle} from 'react-icons/fc'
 import {FaGithub} from 'react-icons/fa'
+import Image from 'next/image'
 
 
 const Auth = () => {
@@ -48,7 +49,7 @@ const Auth = () => {
     <div className='relative h-full w-full bg-[url("/images/hero.jpg")] bg-no-repeat bg-fixed bg-cover'>
       <div className='bg-black w-full h-full lg:bg-opacity-50'> 
         <nav className='px-12 py-5'>
-            <img src="/images/Netflix-logo.png" alt="" className='h-[100px]'/>
+            <Image src="/images/Netflix-logo.png" alt="" className='h-[100px]' width={150} height={150}/>
         </nav>
         <div className='flex justify-center'>
           <div className='bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full'>
@@ -63,7 +64,7 @@ const Auth = () => {
                     label='username'
                     id='username'
                     type='username'
-                    onChange={(e:any)=>setName(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>)=>setName(e.target.value)}
 
                   />
                 )
@@ -74,14 +75,14 @@ const Auth = () => {
                 label='email'
                 id='email'
                 type='email'
-                onChange={(e:any)=>setEmail(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>)=>setEmail(e.target.value)}
             />
             <Input
               value={password}
               label='password'
               id='password'
               type='password'
-              onChange={(e:any)=>setPassword(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>)=>setPassword(e.target.value)}
             />
             <button onClick={variant === 'login'?login:register} className='bg-red-600 py-3 text-white rounded-md  w-full mt-10 hover:bg-red-700 transition'>
               {variant === 'login'? 'Login':'Sign up'}

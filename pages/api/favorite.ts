@@ -4,13 +4,6 @@ import {without} from 'lodash'
 import prismadb from '@/lib/prismadb'
 
 export default async function handler(req:NextApiRequest, res: NextApiResponse){
-
-    // console.log('req.method is :', req.method)
-
-    // const {currentUser} = await serverAuth(req)
-    const {movieId} = req.body;
-
-    // console.log('req.body movieid:', movieId)
     
     try{
         if(req.method === 'POST'){
@@ -85,7 +78,7 @@ export default async function handler(req:NextApiRequest, res: NextApiResponse){
 
 
     }catch(error){
-
+        console.log(error)
         return res.status(400).end()
     }
 }
