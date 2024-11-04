@@ -1,17 +1,20 @@
 import Input from '@/components/Input'
 import axios from 'axios'
 import { signIn } from 'next-auth/react'
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import {FcGoogle} from 'react-icons/fc'
 import {FaGithub} from 'react-icons/fa'
 import Image from 'next/image'
 
 
 const Auth = () => {
-
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
+
+  useEffect(()=>{
+    console.log(email, name, password)
+  },[email, name, password])
 
   const [variant, setVariant] = useState('login')
 
@@ -63,7 +66,7 @@ const Auth = () => {
                     value={name}
                     label='username'
                     id='username'
-                    type='username'
+                    type='text'
                     onChange={(e: React.ChangeEvent<HTMLInputElement>)=>setName(e.target.value)}
 
                   />

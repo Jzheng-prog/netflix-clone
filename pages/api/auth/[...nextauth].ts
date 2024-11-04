@@ -45,7 +45,7 @@ export const authOptions: AuthOptions = {
                     throw new Error('Password is incorrect!');
                 }
 
-                return { id: user.id, email: user.email, name: user.name };
+                return user;
             }
         })
     ],
